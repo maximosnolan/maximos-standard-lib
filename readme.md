@@ -17,3 +17,10 @@ Hello! here are a collection of various standard library features I have implime
 
 ## Array
 + Probably the easiest standard library feature to impliment
+
+## COMING SOON!!!!!!
++ string
++ a few algorithms
++ variant
++ any
++ malloc & free
