@@ -1,6 +1,19 @@
-## Optional
-+ This is a library I created to learn more about C++ 20 and 23 concepts!
-+ If you see something I can improve upon please let me know.
+## Maximos Nolan C++ Standard Library
 
-## NOTE: 
-+ I am moving all of this work to a new repo where I will be implimenting various STL features! 
+Hello! here are a collection of various standard library features I have implimented! I'm mostly doing this to learn more about C++ and if you see anywhere I can improve please let me know!
+
+## Implimented features
+
+
+## Optional
++ supports constexpr
++ implimented as a simple union
+
+## Vector
++ nothing noteworthy here
+
+## Tuple
++ compile time linked list. This a great library to impliment if you want to learn more about variadic templates and recursive templating.
+
+## Array
++ Probably the easiest standard library feature to impliment
