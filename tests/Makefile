@@ -1,9 +1,12 @@
 CC = g++
-CFLAGS = -g
+CFLAGS = -g -Werror -Wpedantic -Wall -O3
 STD = -std=c++2b
 
 clean:
 	rm -f genTest*
+optional:
+	echo "creating tests for optional"
+	$(CC) $(STD) $(CFLAGS) optional_tests.cpp -o genTestOptional
 
 tuple:
 	echo "creating tests for tuple"

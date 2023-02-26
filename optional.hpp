@@ -1,16 +1,17 @@
 /*
-C++ 23 __Optional Type Library
+C++ 23 optional Type Library
 Author: Maximos Nolan
 Last Updated: Feb 14, 2023
 License: MIT
 
 Special shoutout to Jason Turner for inspiring a good portion of this code.
 */
-
+#pragma once
 #include <stdexcept>
 #include <type_traits>
 #include <string>
-#include <iostream>
+
+
 
 template <typename underlying_type>
 struct nullopt_t {
@@ -19,7 +20,7 @@ struct nullopt_t {
 
 
 template <typename underlying_type>
-class __Optional {
+class optional {
 
     private:
 
@@ -43,11 +44,11 @@ class __Optional {
 
    public:
 
-    constexpr __Optional() requires std::is_trivially_constructible<underlying_type>::value = default;
-    constexpr __Optional() {}
-    constexpr ~__Optional() requires std::is_trivially_destructible_v<underlying_type> = default;
+    constexpr optional() requires std::is_trivially_constructible<underlying_type>::value = default;
+    constexpr optional() {}
+    constexpr ~optional() requires std::is_trivially_destructible_v<underlying_type> = default;
 
-    constexpr ~__Optional() {
+    constexpr ~optional() {
         if (is_active) {
             std::destroy_at(&datum.datum);
         }
@@ -57,7 +58,7 @@ class __Optional {
         return datum.datum;
     }
 
-    constexpr __Optional &operator=(const underlying_type &obj) noexcept {
+    constexpr optional &operator=(const underlying_type &obj) noexcept {
         if (is_active) {
             datum.datum = obj;
         } else {
@@ -68,7 +69,7 @@ class __Optional {
         return *this;
     }
 
-    constexpr __Optional &operator*() {
+    constexpr optional &operator*() {
         return datum.datum;
     }
 

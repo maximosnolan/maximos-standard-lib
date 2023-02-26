@@ -79,6 +79,7 @@ class vector {
     constexpr vector(const vector<T> & vec) {
         buffer = reinterpret_cast<T *>(malloc(vec.buffCap * sizeof(T)));
         buffCap = vec.buffCap;
+        numElts = 0;
         for (const auto & val : vec) {
             push(val);
         }
